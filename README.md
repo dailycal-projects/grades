@@ -30,10 +30,14 @@ Migrate the database.
 python manage.py migrate
 ```
 
-Run a series of management commands to import data and compute statistics.
-* Run `python manage.py import_dir [dir]` to import data from all CSV files in a directory.
-* Run `python manage.py import_disciplines` to import a mapping of subjects to academic disciplines.
-* Run `python manage.py compute_stats` to compute subject statistics.
+Run a series of management commands to import data and compute statistics. These can be run in succession with a meta-command.
+```
+python manage.py setup
+```
+This will call:
+* `python manage.py import_dir [dir]` to import data from all CSV files in a directory.
+* `python manage.py import_disciplines` to import a mapping of subjects to academic disciplines.
+* `python manage.py compute_stats` to compute statistics.
 
 ## License
 
