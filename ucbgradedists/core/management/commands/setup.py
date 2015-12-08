@@ -9,6 +9,5 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         call_command('import_dir', settings.DATA_DIR)
-        call_command('import_disciplines',
-                     os.path.join(settings.DATA_DIR, 'disciplines.csv'))
+        call_command('import_disciplines')
         call_command('compute_stats')

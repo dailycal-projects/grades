@@ -1,6 +1,10 @@
 .dot-chart {
     position: relative;
-    @include span-columns(8)
+    @include span-columns(12);
+
+    @include media($large-screen-up) {
+        @include span-columns(8 of 12);
+    }
 
     .hover-target .hover {
         fill: $yellow;
@@ -39,11 +43,15 @@
         li {
             position: absolute;
             text-align: right;
-            font-size: 12px;
+            font-size: 10px;
             line-height: 1.3;
             color: $dark-gray;
             display: table;
             -webkit-font-smoothing: antialiased;
+
+            @include media($large-screen-up) {
+                font-size: 12px;
+            }
 
             span {
                 display: table-cell;

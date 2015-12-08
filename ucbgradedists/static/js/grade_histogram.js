@@ -2,9 +2,6 @@
 var GRAPHIC_DEFAULT_WIDTH = 600;
 var MOBILE_THRESHOLD = 500;
 
-// Global vars
-var isMobile = false;
-
 // D3 formatters
 var fmtComma = d3.format(',');
 
@@ -72,20 +69,14 @@ var gradeHistogram = function(data, container) {
         /* Get width of histogram */
         config['width'] = $(config['container']).width()
 
-        if (config['width'] <= MOBILE_THRESHOLD) {
-            isMobile = true;
-        } else {
-            isMobile = false;
-        }
-
         /*
          * Set up chart container.
          */
         var labelColumn = 'label';
         var valueColumn = 'amt';
 
-        var aspectWidth = isMobile ? 4 : 16;
-        var aspectHeight = isMobile ? 3 : 9;
+        var aspectWidth = 4;
+        var aspectHeight = 3;
         var valueGap = 6;
 
         var margins = {

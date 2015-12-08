@@ -8,6 +8,7 @@
 @import "graphic";
 @import "histogram";
 @import "dot_chart";
+@import "typeahead";
 
 body {
 	margin: 0;
@@ -23,30 +24,63 @@ body {
 	margin-bottom: $base-spacing * 4;
 
 	h1 {
-		margin-bottom: 0;
+		margin-bottom: 10px;
 	}
 
 	p.byline, p.date {
 		margin: 0;
-		text-transform: uppercase;
 	}
 
 	p.lead {
 		font-family: Georgia;
 		max-width: 600px;
 		margin: $base-spacing auto 0 auto;
+		text-align: left;
 	}
 }
 
-.discipline .chart {
-	@include span-columns(4);
+.results-container {
+	max-width: 600px;
+	margin: 0 auto;
+	font-size: 16px;
+
+	table {
+		margin: 40px auto;
+		text-align: left;
+
+		.rank {
+			width: 40px;
+		}
+
+		.figure {
+			text-align: right;
+		}
+	}
 }
+
+.form {
+	margin: 50px auto 20px auto;
+}
+
+#main-input {
+	font-size: 24px;
+	width: 400px;
+}
+
+.btn {
+	font-size: 20px;
+	margin-left: 20px;
+	margin-top: -10px;
+}
+
+#graphic {
+	display: none;
+}
+
 
 .stats-container {
 	@include span-columns(4);
 	@include omega;
-
-	display: none;
 
 	position: relative;
 	right: $gutter;

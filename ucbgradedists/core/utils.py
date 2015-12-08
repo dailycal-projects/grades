@@ -51,25 +51,27 @@ def lettergrade(value):
     """
     Maps grade point average to letter grade.
     """
-    if value > 3.7:
+    if value > 3.85:
+        return 'A'
+    elif value > 3.5:
         return 'A-'
-    elif value > 3.3:
+    elif value > 3.15:
         return 'B+'
-    elif value > 3:
+    elif value > 2.85:
         return 'B'
-    elif value > 2.7:
+    elif value > 2.5:
         return 'B-'
-    elif value > 2.3:
+    elif value > 2.15:
         return 'C+'
-    elif value > 2:
+    elif value > 1.85:
         return 'C'
-    elif value > 1.7:
+    elif value > 1.5:
         return 'C-'
-    elif value > 1.3:
+    elif value > 1.15:
         return 'D+'
-    elif value > 1:
+    elif value > 0.85:
         return 'D'
-    elif value > 0.7:
+    elif value > 0.5:
         return 'D-'
     else:
         return 'F'

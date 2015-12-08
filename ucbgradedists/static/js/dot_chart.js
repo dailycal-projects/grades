@@ -1,7 +1,7 @@
 var DISCIPLINE_COLORS = {
   'Arts & humanities': '#e31a1c',
   'Engineering': '#fdbf6f',
-  'Formal science': '#fb9a99',
+  'Mathematical science': '#fb9a99',
   'Language': '#cab2d6',
   'Natural science': '#33a02c',
   'Other': '#ff7f00',
@@ -13,7 +13,6 @@ var dotChart = function(data, container) {
   // Global vars
   var containerElement;
   var chartElement;
-  var isMobile = false;
   var labelColumn = 'sub';
   var valueColumn = 'avg';
 
@@ -30,6 +29,12 @@ var dotChart = function(data, container) {
       bottom: 0,
       left: (labelWidth + labelMargin)
   };
+
+  if (isMobile) {
+    labelWidth = 120;
+    labelMargin = 10;
+    margins['left'] = labelWidth + labelMargin
+  }
 
   var statsTemplate = _.template($('#stats-template').html());
 
@@ -146,9 +151,12 @@ var dotChart = function(data, container) {
               .attr('width', chartWidth + margins['left'])
               .attr('height', barHeight)
               .attr('fill', '#fff')
+              .attr('id', function(d) { return d.slug })
           .on('mouseover', function(d) {
-            onTargetHover(d);
-            d3.select(this).classed('hover', true);
+            if (!isMobile) {
+              onTargetHover(d);
+              d3.select(this).classed('hover', true);
+            }
           });
 
       /*

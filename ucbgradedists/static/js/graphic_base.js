@@ -1,3 +1,15 @@
+var isMobile = false;
+
+if ($( window ).width() < 800) {
+  isMobile = true;
+}
+
+$( window ).resize(function() {
+    if ($( window ).width() < 800) {
+      isMobile = true;
+    }
+});
+
 /*
  * Convert arbitrary strings to valid css classes.
  * via: https://gist.github.com/mathewbyrne/1280286
