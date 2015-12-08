@@ -1,13 +1,3 @@
-"""
-Django settings for ucbgradedists project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.8/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.8/ref/settings/
-"""
-
 import os
 import dj_database_url
 from django.core.exceptions import ImproperlyConfigured
@@ -39,9 +29,9 @@ ADMINS = (
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = env_var('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env_var('EMAIL_HOST_PASSWORD')
-SERVER_EMAIL = env_var('SERVER_EMAIL')
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+SERVER_EMAIL = ''
 
 # Set up directory structure and static files
 
@@ -69,12 +59,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
-    'tastypie',
     'mathfilters',
     'sass_processor',
     'django_extensions',
+    'bakery',
     'core',
-    'search',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -126,3 +115,11 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Bakery
+
+BUILD_DIR = BASE_DIR.child("build")
+
+BAKERY_VIEWS = (
+    'graphic.views.GraphicView',
+)

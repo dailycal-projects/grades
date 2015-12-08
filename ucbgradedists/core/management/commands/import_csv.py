@@ -14,9 +14,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         verbosity = options['verbosity']
         term = create_objects(options['season'], options['year'],
-                              options['inname'], verbosity)
+                              options['inname'])
 
-def create_objects(season, year, inname, verbosity):
+def create_objects(season, year, inname, verbosity=1):
     # assumption: this csv only contains data for one term, so CCNs are unique
     term = Term.objects.get_or_create(season=season, year=year)[0]
     # data['sections'] maps CCN to a Section object

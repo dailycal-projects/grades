@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block extra-js %}
+<script src="{% static 'js/graphic_base.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/dot_chart.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/grade_histogram.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+
+  <div class="top">
+  <h1>What are UC Berkeley's hardest departments?</h1>
+  <p class="byline">By <a href="">Sahil Chinoy</a> and <a href="">Ronald Kwan</a></p>
+  <p class="date">December 7, 2015</p>
+
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat ipsum et lectus posuere dignissim. Fusce vestibulum elementum mattis. Mauris dolor dui, tempus sed magna eget, dapibus ullamcorper turpis. Sed ac metus quis dui facilisis efficitur. Donec efficitur vel massa id ornare. Suspendisse id sem quis orci pellentesque consectetur. Cras vel massa neque. Duis elit magna, aliquam ac gravida aliquet, convallis et massa. Donec eu nisi aliquet, cursus tortor a, finibus diam. Nunc id libero luctus, suscipit orci vitae, porta tellus. Nullam enim tellus, elementum et fringilla at, scelerisque euismod magna.</p>
+  </div>
+
+  <div class="dot-chart" id="dot-chart"></div>
+
+  <div class="stats-container">
+    <div class="dropdown">
+      <div class="dropdown-container">
+        <p class="dropdown-description">Sort by</p>
+        <p class="dropdown-button">Average grade</p>
+        <ul class="dropdown-menu dropdown-select">
+          <li>Alphabetical</li>
+          <li>Average grade</li>
+          <li>Discipline</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="stats" id="stats">
+        <h2 class="instruction">Hover over a subject</h2>
+      </div>
+    </div>
+
+    <div class="histogram" id="histogram"></div>
+  </div>
+
+
+<script type="text/template" id="stats-template">
+  <h2><%= sub %></h2>
+  <div class="category-legend" style="background: <% print(DISCIPLINE_COLORS[discipline]) %>"></div><p><%= discipline %></p>
+  <div class="stats">
+    <ul>
+      <li class="main-grade"><%= grade %></li>
+      <li><% print(avg.toFixed(2)) %><span>Average</span></li>
+      <li><% print(std.toFixed(2)) %><span>St. Dev.</span></li>
+      <li><% print(fmtComma(num)) %><span>Grades</span></li>
+    </ul>
+  </div>
+</script>
+
+<script type="text/javascript">
+var data = {{ data|safe }};
+dotChart(data, '#dot-chart');
+
+var statsContainer = $(".stats-container");
+$(document).scroll(function(e) {
+    if($(this).scrollTop() > $("#dot-chart").offset().top) {
+        statsContainer.css("display", "block");
+        statsContainer.css({"position" : "fixed", "top" : "20px"});
+    } else {
+        statsContainer.css("position", "relative");
+    }
+});
+</script>
+
+{% endblock content %}

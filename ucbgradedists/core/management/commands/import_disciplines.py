@@ -7,9 +7,12 @@ from core.models import Subject, Discipline
 class Command(BaseCommand):
     help = "Maps department names to disciplines."
 
+    def add_arguments(self, parser):
+        parser.add_argument('path', help="path to the CSV file mapping departments to disciplines")
+
     def handle(self, *args, **options):
-        path = os.path.join(settings.BASE_DIR, 'disciplines.csv')
-        with open(path, 'r') as infile:
+        print "Importing disciplines from {}".format(options['path'])
+        with open(options['path'], 'r') as infile:
             reader = csv.DictReader(infile)
             for row in reader:
                 subject = Subject.objects.get(name=row['db_name'])

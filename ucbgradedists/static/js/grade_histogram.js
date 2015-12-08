@@ -135,12 +135,18 @@ var gradeHistogram = function(data, container) {
             min = 0;
         }
 
+        var max = d3.max(config['data'], function(d) {
+            return Math.ceil(d[valueColumn] / roundTicksFactor) * roundTicksFactor;
+        });
+
+        if (max < 50) {
+            max = 50;
+        }
+
         var yScale = d3.scale.linear()
             .domain([
                 min,
-                d3.max(config['data'], function(d) {
-                    return Math.ceil(d[valueColumn] / roundTicksFactor) * roundTicksFactor;
-                })
+                max
             ])
             .range([chartHeight, 0]);
 

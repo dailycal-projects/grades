@@ -11,16 +11,13 @@ django-mathfilters==0.3.0
 django-model-utils==2.3.1
 django-postgrespool==0.3.0
 django-sass-processor==0.3.0
-django-tastypie==0.12.2
 django-toolbelt==0.0.1
 gunicorn==19.3.0
 libsass==0.9.2
-numpy==1.10.1
 psycopg2==2.6
 python-dateutil==2.4.2
 python-mimeparse==0.1.4
 six==1.10.0
-SQLAlchemy==1.0.8
 sqlparse==0.1.16
 static3==0.6.1
 Unipath==1.1

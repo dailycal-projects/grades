@@ -5,13 +5,9 @@
 @import "header";
 @import "stats";
 @import "dropdown";
-@import "accordian_tabs_minimal";
 @import "graphic";
 @import "histogram";
 @import "dot_chart";
-@import "info";
-@import "home";
-@import "division";
 
 body {
 	margin: 0;
@@ -22,30 +18,25 @@ body {
 	margin: 20px auto;
 }
 
-td a {
-    display: block;
-    width: 100%;
-}
+.top {
+	text-align: center;
+	margin-bottom: $base-spacing * 4;
 
-.subject {
 	h1 {
 		margin-bottom: 0;
 	}
 
-	.discipline-label a {
-		color: $medium-gray;
-
-		&:hover {
-			color: $action-color;
-		}
+	p.byline, p.date {
+		margin: 0;
+		text-transform: uppercase;
 	}
 
-	.accordion-tabs-minimal {
-		margin-top: $base-spacing;
+	p.lead {
+		font-family: Georgia;
+		max-width: 600px;
+		margin: $base-spacing auto 0 auto;
 	}
-	
 }
-
 
 .discipline .chart {
 	@include span-columns(4);
@@ -55,8 +46,14 @@ td a {
 	@include span-columns(4);
 	@include omega;
 
-	position: fixed;
+	display: none;
+
+	position: relative;
 	right: $gutter;
+
+	h2 {
+		margin: 0;
+	}
 
 	.category-legend {
 		width: 10px;
