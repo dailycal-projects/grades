@@ -287,6 +287,17 @@ var dotChart = function(data, container) {
     animateTransition();
   }
 
+  var sortByCount = function() {
+    _.each(['circle','.labels li', '.value text', '.hover-target rect'], function(cls) {
+      containerElement.selectAll(cls)
+        .sort(function(a, b) {
+          return b['num'] - a['num'];
+      });
+    });
+
+    animateTransition();
+  }
+
   var animateTransition = function() {
     chartElement.selectAll('circle')
       .transition()
@@ -329,6 +340,8 @@ var dotChart = function(data, container) {
       sortAlphabetical();
     } else if (sortBy == 'Discipline') {
       sortByDiscipline();
+    } else if (sortBy == 'Number of grades') {
+      sortByCount();
     }
   }
 

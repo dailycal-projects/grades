@@ -123,3 +123,7 @@ BUILD_DIR = BASE_DIR.child("build")
 BAKERY_VIEWS = (
     'graphic.views.GraphicView',
 )
+
+AWS_BUCKET_NAME = env_var('AWS_BUCKET_NAME')
+AWS_ACCESS_KEY_ID = env_var('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env_var('AWS_SECRET_ACCESS_KEY')

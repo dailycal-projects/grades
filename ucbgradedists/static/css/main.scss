@@ -12,6 +12,7 @@
 
 body {
 	margin: 0;
+	padding-bottom: 100px;
 }
 
 .container {
@@ -24,7 +25,8 @@ body {
 	margin-bottom: $base-spacing * 4;
 
 	h1 {
-		margin-bottom: 10px;
+		max-width: 700px;
+		margin: 0 auto 10px auto;
 	}
 
 	p.byline, p.date {
@@ -33,13 +35,17 @@ body {
 
 	p.lead {
 		font-family: Georgia;
-		max-width: 600px;
+		max-width: 500px;
 		margin: $base-spacing auto 0 auto;
 		text-align: left;
 	}
 }
 
-.results-container {
+#results-container {
+	display: none;
+	background: $yellow;
+	padding: 20px;
+	border-radius: 10px;
 	max-width: 600px;
 	margin: 0 auto;
 	font-size: 16px;
@@ -59,11 +65,11 @@ body {
 }
 
 .form {
-	margin: 50px auto 20px auto;
+	margin: 30px auto 50px auto;
 }
 
 #main-input {
-	font-size: 24px;
+	font-size: 20px;
 	width: 400px;
 }
 
