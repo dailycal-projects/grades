@@ -12,19 +12,20 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-
   <div class="top">
     <h1>Guess the UC Berkeley department with the lowest grades</h1>
-    <p class="byline">By <a href="">SAHIL CHINOY</a> and <a href="">RONALD KWAN</a> &middot; <span class="date">DECEMBER 7, 2015</span></p>
+    <p class="byline">By <b><a href="http://www.dailycal.org/author/schinoy/">SAHIL CHINOY</a></b> and <b><a href="">RONALD KWAN</a></b></p>
+    <p class="date">DECEMBER 11, 2015</p>
 
-    <p class="lead">At UC Berkeley, where students are concerned about the <a href="http://www.bostonglobe.com/ideas/2013/08/31/the-trouble-with-grade-inflation-works/tL6am7MEz56f3PA2MD7I3I/story.html" target="_blank">effects their grades might have</a> on their employment and graduate school prospects, hypotheses about the departments with the lowest grades abound.</p>
+    <div class="lead-text">
+      <p>At UC Berkeley, where students are concerned about the <a href="http://www.bostonglobe.com/ideas/2013/08/31/the-trouble-with-grade-inflation-works/tL6am7MEz56f3PA2MD7I3I/story.html" target="_blank">effects their grades might have</a> on their employment and graduate school prospects, hypotheses about the departments with the lowest grades abound.</p>
 
-    <p class="lead">We'd like to see if those perceptions reflect reality. The Daily Californian analyzed more than 1.5 million grades given over the last 8 years to determine how grading has differed across departments. Grading policies differ across departments and grade averages don't necessarily measure the difficulty of a department's courses. Still, we found a significant disparity between the departments with the highest and lowest averages.</p>
+      <p>To see if those perceptions reflect reality, The Daily Californian analyzed more than 1.5 million grades given over the last 8 years. Grading policies vary between departments and grade averages don't necessarily measure the difficulty of a department's courses. Still, we found a significant disparity between the departments with the highest and lowest averages.</p>
 
-    <p class="lead">We limited our analysis to undergraduate courses, considering only the departments that have issued more than 1,000 grades. These figures reflect grades awarded in classes offered by a particular department, not the GPA of students in a particular major. Data is from <a href="http://calanswers.berkeley.edu/" target="_blank">Cal Answers</a>.</p>
+      <p>We limited our analysis to undergraduate courses, considering only the departments that have issued more than 1,000 grades. These figures reflect grades awarded in classes offered by a particular department, not the GPA of students in a particular major. Data is from <a href="http://calanswers.berkeley.edu/" target="_blank">Cal Answers</a>.</p>
 
-    <p class="lead">Before seeing the results, we'd like you to guess which department has had the lowest grade point average. You'll be able to compare your guess to others' and to the true ranking.</p>
+      <p>Before seeing the results, we'd like you to guess which department has had the lowest grade point average. You'll be able to compare your guess to others' and to the true ranking. We'll use the results to investigate perceptions of grading policies in more depth.</p>
+    </div>
 
     <div class="form">
       <h2>Which department do you think had the lowest average?</h2>
@@ -32,6 +33,7 @@
         <input id="main-input" class="typeahead" type="text">
         <button class="btn" type="submit">Submit</button>
       </form>
+      <h3><a id="skipToResults">Or, skip to the results &nbsp; <i class="fa fa-angle-double-down"></i></a></h3>
     </div>
 
     <div id="results-container">
@@ -42,33 +44,35 @@
   </div> <!-- top -->
 
   <div id="graphic">
-    <div class="dot-chart" id="dot-chart"></div>
+    <div class="sticky">
+      <div id="legend-container"></div>
+    </div>
 
-    <div class="stats-container">
-      <div class="dropdown">
+    <div class="sticky stats-container">
+      <div class="wrapper">
+        <div class="dropdown">
         <div class="dropdown-container">
           <p class="dropdown-description">Sort by</p>
-          <p class="dropdown-button">Average grade</p>
+          <p class="dropdown-button">Average</p>
           <ul class="dropdown-menu dropdown-select">
             <li>Alphabetical</li>
-            <li>Average grade</li>
+            <li>Average</li>
             <li>Discipline</li>
             <li>Number of grades</li>
           </ul>
         </div>
       </div>
 
-      <div class="wrapper">
-        <div class="stats" id="stats">
-          <h2 class="instruction">Hover over a department</h2>
+      <div class="stats" id="stats">
+        <h2 class="instruction">Hover over a department</h2>
         </div>
       </div>
 
       <div class="histogram" id="histogram"></div>
     </div>
-  </div>
 
-</div> <!-- container -->
+    <div class="dot-chart" id="dot-chart"></div>
+  </div>
 
 <script type="text/template" id="stats-template">
   <h2><%= sub %></h2>
@@ -77,39 +81,43 @@
     <ul>
       <li class="main-grade"><%= grade %></li>
       <li><% print(avg.toFixed(2)) %><span>Average</span></li>
-      <li><% print(std.toFixed(2)) %><span>St. Dev.</span></li>
+      <li><% print(ordinal_suffix_of(rank)) %><span>Rank</span></li>
       <li><% print(fmtComma(num)) %><span>Grades</span></li>
     </ul>
   </div>
 </script>
 
 <script type="text/template" id="right-template">
-  <p>Right! The department with the lowest average is Biology, with an average of 2.80. <b><%= num_guesses %></b> other people have guessed correctly. Here are the top guesses:</p>
+  <p>Right! The department with the lowest average is Biology, with an average of 2.80. <b><%= num_guesses %></b> other people have guessed correctly. Here are the top five guesses:</p>
 </script>
 
 <script type="text/template" id="close-template">
-  <p>Close! <%= sub %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b>, with an average of <b><% print(avg.toFixed(2)) %></b>. The department with the lowest average is Biology, with an average of 2.80.</p>
-  <p><b><%= num_guesses %></b> other people have guessed <%= sub %>. Here are the top guesses:</p>
+  <p>Close! <%= sub %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
+  <p>The average across all classes was a 3.29, and the department with the lowest average was Biology, with an average of 2.80.</p>
+  <p><b><%= num_guesses %></b> other people have guessed <%= sub %>. Here are the top five guesses:</p>
 </script>
 
 <script type="text/template" id="far-template">
-  <p>Nope! <%= sub %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b>, with an average of <b><% print(avg.toFixed(2)) %></b>. The department with the lowest average is Biology, with an average of 2.80.</p>
-  <p><b><%= num_guesses %></b> other people have guessed <%= sub %>. Here are the top guesses:</p>
+  <p>Nope! <%= sub %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
+  <p>The average across all classes was a 3.29, and the department with the lowest average was Biology, with an average of 2.80.</p>
+  <p><b><%= num_guesses %></b> other people have guessed <%= sub %>. Here are the top five guesses:</p>
 </script>
 
 <script type="text/template" id="top-guesses-template">
   <table>
   <thead>
   <tr> 
+    <th class="num"></th>
     <th>Subject</th>
     <th class="figure">Number of people who guessed this subject</th>
-    <th class="figure">GPA rank <br> (lowest to highest)</th>
+    <th class="figure">Rank of grade average <br> (out of 98)</th>
     
   </tr>
   </thead>
   <tbody>
   <% _.each(guesses, function(guess, i) {%>
   <tr>
+    <td class="num"><% print(i+1) %></td>
     <td><% print(guess.subject) %></td>
     <td class="figure"><% print(guess.count) %></td>
     <td class="figure"><% print(ordinal_suffix_of(guess.rank)) %></td>
@@ -118,7 +126,7 @@
   </tbody>
   </table>
 
-  <h3 onClick="scrollToDotChart()"><a>Explore grade distributions by department &nbsp; <i class="fa fa-angle-double-down"></i></a></h3>
+  <h3 id="scrollToDotChart"><a>Explore grade distributions by department &nbsp; <i class="fa fa-angle-double-down"></i></a></h3>
 </script>
 
 <script type="text/javascript">
@@ -142,6 +150,7 @@ function ordinal_suffix_of(i) {
 Parse.initialize("mXhOmzRpt90nv6YLS7opoITqkFnBE9csUXYizqhU", "zk9uXvFddU2QFVqz4HBhYnvnFX1eXJEJAe38Zb36");
 
 var data = {{ data|safe }};
+var chartDrawn = false;
 
 var subject_list = _.map(data, function(elem) { return elem.sub });
 
@@ -232,11 +241,17 @@ var onFormSubmit = function() {
 
 var afterDataLoad = function() {
   $('#graphic').css("display", "block");
-  dotChart(data, '#dot-chart');
+
+  if (!chartDrawn) {
+    dotChart(data, '#dot-chart');
+    chartDrawn = true;
+  }  
 
   $('html, body').animate({
     scrollTop: $("#results-text").offset().top - 20
   }, 1000);
+
+  $('#scrollToDotChart').on('touchstart click', function() { scrollToDotChart(); });
 }
 
 var scrollToDotChart = function() {
@@ -244,6 +259,15 @@ var scrollToDotChart = function() {
     scrollTop: $("#dot-chart").offset().top - 20
   }, 1000);
 }
+
+$('#skipToResults').on('touchstart click', function() {
+  $('#graphic').css("display", "block");
+  if (!chartDrawn) {
+    dotChart(data, '#dot-chart');
+    chartDrawn = true;
+  }
+  scrollToDotChart();
+});
 
 var updateResults = function(stats) {
   if (stats.rank == 1) {
@@ -266,15 +290,16 @@ $('#main-form').submit(function(event) {
   onFormSubmit();
 });
 
-var statsContainer = $(".stats-container");
+var stickyElements = d3.selectAll('.sticky');
 $(document).scroll(function(e) {
-    if($(this).scrollTop() > $("#dot-chart").offset().top && !isMobile) {
-        statsContainer.css("display", "block");
-        statsContainer.css({"position" : "fixed", "top" : "20px"});
+    if($(this).scrollTop() > ($("#graphic").offset().top) && !isMobile) {
+        stickyElements.classed('stuck', true);
+        d3.select('#dot-chart').classed('stuck', true);
     } else if(!isMobile) {
-        statsContainer.css("position", "relative");
+        stickyElements.classed('stuck', false);
+        d3.select('#dot-chart').classed('stuck', false);
     } else {
-      statsContainer.css("display", "none");
+      d3.select('.stats-container').style("display", "none");
     }
 });
 </script>

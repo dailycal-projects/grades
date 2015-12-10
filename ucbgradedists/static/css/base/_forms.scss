@@ -45,8 +45,7 @@ select[multiple=multiple] {
   }
 
   &:focus {
-    border-color: $action-color;
-    box-shadow: $form-box-shadow-focus;
+    border-color: $blue;
     outline: none;
   }
 

@@ -1,7 +1,47 @@
+$input-width: 500px;
+
+.form {
+  margin: 30px auto 50px auto;
+  max-width: 650px;
+  text-align: left;
+
+  h2 {
+    font-weight: 400;
+  }
+
+  h3 {
+    font-weight: 300;
+  }
+}
+
+#main-input {
+  font-size: 20px;
+  width: 100%;
+}
+
+.btn {
+  font-size: 16px;
+  margin-top: -8px;
+
+  @include media($large-screen-up) {
+    font-size: 20px;
+    margin-left: 30px;
+  }
+}
+
+.twitter-typeahead {
+  width: 70%;
+  max-width: $input-width;
+
+  @include media($large-screen-up) {
+    width: 80%;
+  }
+}
+
 .typeahead,
 .tt-query,
 .tt-hint {
-  width: 400px;
+  width: 100%;
   padding: 8px 12px;
   font-size: 20px;
   line-height: 30px;
@@ -17,17 +57,18 @@
 }
 
 .typeahead:focus {
-  border: 2px solid $action-color;
+  border: 2px solid $blue;
 }
 
 .tt-menu {
   text-align: left;
-  width: 400px;
-  margin: 12px 0;
+  width: 100%;
+  margin: 3px 0;
   padding: 8px 0;
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 3;
   -webkit-border-radius: 8px;
      -moz-border-radius: 8px;
           border-radius: 8px;

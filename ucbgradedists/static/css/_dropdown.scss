@@ -51,6 +51,7 @@
     margin: 0;
     padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);
     position: relative;
+    color: $dropdown-color;
 
     @include media($large-screen) {
       padding: 0 ($dropdown-padding * 2.5) 0 ($dropdown-padding / 2);

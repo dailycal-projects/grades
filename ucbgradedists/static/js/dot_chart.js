@@ -1,12 +1,12 @@
 var DISCIPLINE_COLORS = {
-  'Arts & humanities': '#e31a1c',
-  'Engineering': '#fdbf6f',
-  'Mathematical science': '#fb9a99',
-  'Language': '#cab2d6',
-  'Natural science': '#33a02c',
-  'Other': '#ff7f00',
-  'Professional': '#b2df8a',
-  'Social science': '#a6cee3'  
+  'Arts & humanities': '#8dd3c7',
+  'Engineering': '#bc80bd',
+  'Mathematical science': '#ccebc5',
+  'Language': '#fb8072',
+  'Natural science': '#80b1d3',
+  'Other': '#fdb462',
+  'Professional': '#fccde5',
+  'Social science': '#b3de69'
 };
 
 var dotChart = function(data, container) {
@@ -80,12 +80,16 @@ var dotChart = function(data, container) {
       containerElement = d3.select(config['container']);
       containerElement.html('');
 
+      var legendContainer = d3.select('#legend-container');
+      legendContainer.html('');
+
       /*
        * Render a color legend.
        */
 
-      var legend = containerElement.append('ul')
+      var legend = legendContainer.append('ul')
           .attr('class', 'key')
+          .style('width', config['width'] + 'px')
           .selectAll('g')
               .data(_.pairs(colors))
           .enter().append('li')
@@ -334,7 +338,7 @@ var dotChart = function(data, container) {
   }
   
   var toggleSort = function(sortBy) {
-    if (sortBy == 'Average grade') {
+    if (sortBy == 'Average') {
       sortByAverage();
     } else if (sortBy == 'Alphabetical') {
       sortAlphabetical();
