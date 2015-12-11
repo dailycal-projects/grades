@@ -20,8 +20,12 @@ class GraphicView(BuildableTemplateView):
         subject_stats = SubjectStats.objects.filter(division_set=division) \
                 .filter(letter_grades__gte=1000).order_by('mean')
         for stat in subject_stats:
+            if 'Interdisciplinary' in stat.subject.canonical:
+                continue
+
             info = {}
-            info['sub'] = stat.subject.name
+            info['short_name'] = stat.subject.short_name
+            info['full_name'] = stat.subject.canonical
             info['slug'] = stat.subject.slug
             info['discipline'] = stat.subject.discipline.name
             info['avg'] = stat.mean

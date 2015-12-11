@@ -77,6 +77,7 @@ class Subject(models.Model):
     A single academic subject, such as mathematics or French.
     """
     name = models.CharField(max_length=256)
+    short_name = models.CharField(max_length=256, null=True)
     canonical = models.CharField(max_length=256, null=True)
     discipline = models.ForeignKey(Discipline, null=True)
     slug = models.SlugField(default='')

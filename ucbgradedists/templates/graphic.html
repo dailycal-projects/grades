@@ -4,27 +4,27 @@
 
 {% block extra-js %}
 <script src="{% static 'js/typeahead.bundle.min.js' %}" type="text/javascript"></script>
+<script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 <script src="{% static 'js/graphic_base.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/dot_chart.js' %}" type="text/javascript"></script>
 <script src="{% static 'js/grade_histogram.js' %}" type="text/javascript"></script>
-<script src="//www.parsecdn.com/js/parse-1.6.7.min.js"></script>
 
 {% endblock %}
 
 {% block content %}
   <div class="top">
     <h1>Guess the UC Berkeley department with the lowest grades</h1>
-    <p class="byline">By <b><a href="http://www.dailycal.org/author/schinoy/">SAHIL CHINOY</a></b> and <b><a href="">RONALD KWAN</a></b></p>
+    <p class="byline">By <b><a href="http://www.dailycal.org/author/schinoy/">SAHIL CHINOY</a></b> and <b><a href="http://www.dailycal.org/author/rkwan/">RONALD KWAN</a></b></p>
     <p class="date">DECEMBER 11, 2015</p>
 
     <div class="lead-text">
-      <p>At UC Berkeley, where students are concerned about the <a href="http://www.bostonglobe.com/ideas/2013/08/31/the-trouble-with-grade-inflation-works/tL6am7MEz56f3PA2MD7I3I/story.html" target="_blank">effects their grades might have</a> on their employment and graduate school prospects, hypotheses about the departments with the lowest grades abound.</p>
+      <p>At UC Berkeley, hypotheses about the departments with the lowest grades abound.</p>
 
-      <p>To see if those perceptions reflect reality, The Daily Californian analyzed more than 1.5 million grades given over the last 8 years. Grading policies vary between departments and grade averages don't necessarily measure the difficulty of a department's courses. Still, we found a significant disparity between the departments with the highest and lowest averages.</p>
+      <p>To see if those perceptions reflect reality, The Daily Californian analyzed more than 1.5 million grades given over the last eight years and reported through <a href="http://calanswers.berkeley.edu/" target="_blank">Cal Answers</a>, a repository for campus data. We limited our analysis to undergraduate courses, considering only the departments that have issued more than 1,000 letter grades. These figures reflect grades awarded in classes offered by a particular department, not the GPA of students in a particular major.</p>
 
-      <p>We limited our analysis to undergraduate courses, considering only the departments that have issued more than 1,000 grades. These figures reflect grades awarded in classes offered by a particular department, not the GPA of students in a particular major. Data is from <a href="http://calanswers.berkeley.edu/" target="_blank">Cal Answers</a>.</p>
+      <p>Grading policies vary between departments and grade averages don't necessarily measure the difficulty of a department's courses. Still, we found a significant gap — more than one letter grade — between the departments with the highest and lowest averages.</p>
 
-      <p>Before seeing the results, we'd like you to guess which department has had the lowest grade point average. You'll be able to compare your guess to others' and to the true ranking. We'll use the results to investigate perceptions of grading policies in more depth.</p>
+      <p>Before seeing the results, we'd like you to guess which department has had the lowest grade average. You'll be able to compare your guess to others' and to the true ranking.</p>
     </div>
 
     <div class="form">
@@ -75,7 +75,7 @@
   </div>
 
 <script type="text/template" id="stats-template">
-  <h2><%= sub %></h2>
+  <h2><%= full_name %></h2>
   <div class="category-legend" style="background: <% print(DISCIPLINE_COLORS[discipline]) %>"></div><p><%= discipline %></p>
   <div class="stats">
     <ul>
@@ -92,15 +92,15 @@
 </script>
 
 <script type="text/template" id="close-template">
-  <p>Close! <%= sub %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
+  <p>Close! <%= full_name %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
   <p>The average across all classes was a 3.29, and the department with the lowest average was Biology, with an average of 2.80.</p>
-  <p><b><%= num_guesses %></b> other people have guessed <%= sub %>. Here are the top five guesses:</p>
+  <p><b><%= num_guesses %></b> other people have guessed <%= full_name %>. Here are the top five guesses:</p>
 </script>
 
 <script type="text/template" id="far-template">
-  <p>Nope! <%= sub %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
+  <p>Nope! <%= full_name %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
   <p>The average across all classes was a 3.29, and the department with the lowest average was Biology, with an average of 2.80.</p>
-  <p><b><%= num_guesses %></b> other people have guessed <%= sub %>. Here are the top five guesses:</p>
+  <p><b><%= num_guesses %></b> other people have guessed <%= full_name %>. Here are the top five guesses:</p>
 </script>
 
 <script type="text/template" id="top-guesses-template">
@@ -152,7 +152,7 @@ Parse.initialize("mXhOmzRpt90nv6YLS7opoITqkFnBE9csUXYizqhU", "zk9uXvFddU2QFVqz4H
 var data = {{ data|safe }};
 var chartDrawn = false;
 
-var subject_list = _.map(data, function(elem) { return elem.sub });
+var subject_list = _.map(data, function(elem) { return elem.full_name });
 
 var engine = new Bloodhound({
   local: subject_list,
@@ -173,7 +173,7 @@ var onFormSubmit = function() {
   var subject = $('#main-input').val();
 
   var stats = _.find(data, function(elem) {
-    return elem.sub == subject;
+    return elem.full_name == subject;
   });
 
   if (!stats) {
@@ -189,7 +189,6 @@ var onFormSubmit = function() {
   query.first({
     success: function(guess) {
       if (guess) {
-        guess.set('rank', stats.rank);
         guess.increment('count');
         guess.save();
       } else {

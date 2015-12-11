@@ -13,7 +13,7 @@ var dotChart = function(data, container) {
   // Global vars
   var containerElement;
   var chartElement;
-  var labelColumn = 'sub';
+  var labelColumn = 'short_name';
   var valueColumn = 'avg';
 
   var barHeight = 20;
@@ -237,7 +237,13 @@ var dotChart = function(data, container) {
               .append('span')
                   .text(function(d) {
                       return d[labelColumn];
-                  });
+                  })
+              .on('mouseover', function(d) {
+                if (!isMobile) {
+                  onTargetHover(d);
+                  d3.select('#' + d.slug).classed('hover', true);
+                }
+              });
 
       /*
        * Render dot values.
@@ -273,7 +279,7 @@ var dotChart = function(data, container) {
     _.each(['circle','.labels li', '.value text', '.hover-target rect'], function(cls) {
       containerElement.selectAll(cls)
         .sort(function(a, b) {
-          return a['sub'] == b['sub'] ? 0 : a['sub'] < b['sub'] ? -1 : 1;
+          return a['short_name'] == b['short_name'] ? 0 : a['short_name'] < b['short_name'] ? -1 : 1;
       });
     });
 
