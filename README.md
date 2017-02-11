@@ -1,6 +1,8 @@
 # Grades
 
-Parse and explore UC Berkeley grade distribution data from [Cal Answers](http://calanswers.berkeley.edu/).
+Explore UC Berkeley grade distribution data from [Cal Answers](http://calanswers.berkeley.edu/).
+
+This project contains the data and processing code used to generate the Daily Cal's [interactive graphic](http://projects.dailycal.org/grades/) about the most difficult departments on campus.
 
 ## Requirements
 
@@ -29,6 +31,8 @@ Migrate the database.
 ```
 python manage.py migrate
 ```
+
+## Usage
 
 Run a series of management commands to import data and compute statistics. These can be run in succession with a meta-command.
 ```

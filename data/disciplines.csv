@@ -1,167 +1,1 @@
-db_name,canonical_name,discipline
-Aerospace Studies,Aerospace Studies,Other
-African American Studies,African American Studies,Social science
-Ag & Environmental Chem,Agricultural & Environmental Chemistry,Natural science
-Ag & Resource Econ & Pol,Agricultural & Resource Economics,Social science
-American Studies,American Studies,Social science
-Anc Hist & Medit Archae,Ancient History & Mediterranean Archaeology,Social science
-Anthropology,Anthropology,Social science
-Applied Science & Tech,Applied Science & Technology,Engineering
-Arabic,Arabic,Language
-Architecture,Architecture,Professional
-Art Practice,Art Practice,Arts & humanities
-Asian American Studies,Asian American Studies,Social science
-Asian Studies,Asian Studies,Social science
-Astronomy,Astronomy,Natural science
-Bengali,Bengali,Language
-Berk-Columbia Exec MBA,Berkeley-Columbia Executive MBA,Professional
-Bioengineering,Bioengineering,Engineering
-Biology,Biology,Natural science
-Biophysics,Biophysics,Natural science
-Buddhist Studies,Buddhist Studies,Social science
-Business Admin-MBA,Business Administration (MBA),Professional
-Business Admin-PhD,Business Administration (PhD),Professional
-Business Admin-Undergrad,Business Administration (Undergrad),Professional
-Catalan,Catalan,Language
-Celtic Studies,Celtic Studies,Language
-Chemical Engineering,Chemical Engineering,Engineering
-Chemistry,Chemistry,Natural science
-Chicano Studies,Chicano Studies,Social science
-Chinese,Chinese,Language
-City & Regional Planning,City & Regional Planning,Professional
-Civil & Environmental Eng,Civil & Environmental Eng,Engineering
-Classics,Classics,Arts & humanities
-Cognitive Science,Cognitive Science,Natural science
-College Writing Programs,College Writing Programs,Arts & humanities
-Comparative Biochemistry,Comparative Biochemistry,Natural science
-Comparative Literature,Comparative Literature,Arts & humanities
-Computational Biology,Computational Biology,Natural science
-Computer Science,Computer Science,Mathematical science
-Creative Writing,Creative Writing,Arts & humanities
-Critical Theory,Critical Theory,Arts & humanities
-Cuneiform,Cuneiform,Language
-Demography,Demography,Social science
-Design Innovation,Design Innovation,Other
-Development Engineering,Development Engineering,Engineering
-Development Practice,Development Practice,Social science
-Development Studies,Development Studies,Social science
-Dutch,Dutch,Language
-Earth & Planetary Science,Earth & Planetary Science,Natural science
-East Asian Languages,East Asian Languages,Language
-East European Studies,East European Studies,Social science
-Economics,Economics,Social science
-Education,Education,Professional
-Egyptian,Egyptian,Language
-Electrical Engineering,Electrical Engineering,Engineering
-Energy and Resources,Energy & Resources,Professional
-Engineering,Engineering,Engineering
-English,English,Arts & humanities
-"Env Sci, Policy, & Mgmt","Environmental Science, Policy, & Management",Professional
-Environ Econ & Policy,Environmental Economics & Policy,Social science
-Environmental Design,Environmental Design,Professional
-Environmental Sciences,Environmental Sciences,Natural science
-Ethnic Studies,Ethnic Studies,Social science
-Ethnic Studies Grad Group,Ethnic Studies Grad Group,Social science
-Eurasian Studies,Eurasian Studies,Social science
-Evening & Weekend MBA,Evening & Weekend MBA,Professional
-Filipino,Filipino,Language
-Film,Film,Arts & humanities
-Financial Engineering,Financial Engineering,Engineering
-Folklore,Folklore,Social science
-French,French,Language
-Gender & Womens Studies,Gender & Womens Studies,Social science
-Geography,Geography,Natural science
-German,German,Language
-Global Metro Studies,Global Metro Studies,Social science
-Global Poverty & Practice,Global Poverty & Practice,Social science
-Grad Professional Dev Pgm,Graduate Professional Development Program,Professional
-Greek,Greek,Language
-Health & Medical Sciences,Health & Medical Sciences,Professional
-Hebrew,Hebrew,Language
-Hindi-Urdu,Hindi-Urdu,Language
-History,History,Social science
-History of Art,History of Art,Social science
-Indigenous Lang of Amer,Indigenous Languages of America,Language
-Industrial Eng & Ops Rsch,Industrial Engineering & Operations Research,Engineering
-Info & Data Science,Info & Data Science,Professional
-Info Mgmt & Systems,Information Management & Systems,Professional
-Integrative Biology,Integrative Biology,Natural science
-Interdisciplinary Studies,Interdisciplinary Studies,Other
-International & Area Stds,International & Area Studies,Social science
-Iranian,Iranian,Language
-Italian Studies,Italian Studies,Language
-Japanese,Japanese,Language
-Jewish Studies,Jewish Studies,Social science
-Journalism,Journalism,Professional
-Khmer,Khmer,Language
-Korean,Korean,Language
-Landscape Arch & Env Plan,Landscape Arch & Environmental Planning,Professional
-Language Proficiency Pgm,Language Proficiency Program,Other
-Latin,Latin,Language
-Latin American Studies,Latin American Studies,Social science
-Law,Law,Professional
-Legal Studies,Legal Studies,Social science
-Letters & Science,Letters & Science,Other
-LGBT Studies,LGBT Studies,Social science
-Linguistics,Linguistics,Social science
-Malay/Indonesian,Malay/Indonesian,Language
-Materials Science & Eng,Materials Science & Engineering,Engineering
-Mathematics,Mathematics,Mathematical science
-Mechanical Engineering,Mechanical Engineering,Engineering
-Media Studies,Media Studies,Arts & humanities
-Medieval Studies,Medieval Studies,Social science
-Middle Eastern Studies,Middle Eastern Studies,Social science
-Military Affairs,Military Affairs,Other
-Military Science,Military Science,Other
-Molecular & Cell Biology,Molecular & Cell Biology,Natural science
-Music,Music,Arts & humanities
-Nanoscale Science & Eng,Nanoscale Science & Engineering,Engineering
-Native American Studies,Native American Studies,Social science
-Natural Resources,Natural Resources,Other
-Naval Science,Naval Science,Other
-Near Eastern Studies,Near Eastern Studies,Social science
-Neuroscience,Neuroscience,Natural science
-New Media,New Media,Other
-Nuclear Engineering,Nuclear Engineering,Engineering
-Nutritional Science & Tox,Nutritional Science,Natural science
-Optometry,Optometry,Professional
-Peace & Conflict Studies,Peace & Conflict Studies,Social science
-Persian,Persian,Language
-Philosophy,Philosophy,Arts & humanities
-Physical Education,Physical Education,Other
-Physics,Physics,Natural science
-Plant Biology,Plant Biology,Natural science
-Political Economy,Political Economy,Social science
-Political Science,Political Science,Social science
-Portuguese,Portuguese,Language
-Psychology,Psychology,Social science
-Public Health,Public Health,Professional
-Public Policy,Public Policy,Professional
-Punjabi,Punjabi,Language
-Religious Studies,Religious Studies,Social science
-Rhetoric,Rhetoric,Arts & humanities
-Sanskrit,Sanskrit,Language
-Scandinavian,Scandinavian,Language
-Science & Math Education,Science & Math Education,Professional
-Science & Tech Studies,Science & Tech Studies,Other
-Semitics,Semitics,Social science
-Slavic Languages & Lit,Slavic Languages & Lit,Language
-Social Welfare,Social Welfare,Social science
-Sociology,Sociology,Social science
-South & SE Asian Studies,South & SE Asian Studies,Social science
-South Asian,South Asian,Language
-Southeast Asian,Southeast Asian,Language
-Spanish,Spanish,Language
-Statistics,Statistics,Mathematical science
-Tagalog,Tagalog,Language
-Tamil,Tamil,Language
-Telugu,Telugu,Language
-Thai,Thai,Language
-Theater Dance & Perf Stds,"Theater, Dance & Performance Studies",Arts & humanities
-Tibetan,Tibetan,Language
-Turkish,Turkish,Language
-UGIS-UG Interdisc Studies,Undergraduate Interdisciplinary Studies,Other
-Vietnamese,Vietnamese,Language
-Vision Science,Vision Science,Professional
-Visual Studies,Visual Studies,Arts & humanities
-Yiddish,Yiddish,Language
+db_name,short_name,canonical_name,disciplineAerospace Studies,Aerospace Studies,Aerospace Studies,OtherAfrican American Studies,African American Studies,African American Studies,Social scienceAg & Environmental Chem,Agricult & Environ Chem,Agricultural & Environmental Chemistry,Natural scienceAg & Resource Econ & Pol,Ag & Resource Econ & Pol,Agricultural & Resource Economics,Social scienceAmerican Studies,American Studies,American Studies,Social scienceAnc Hist & Medit Archae,Anc Hist & Medit Archae,Ancient History & Mediterranean Archaeology,Social scienceAnthropology,Anthropology,Anthropology,Social scienceApplied Science & Tech,Applied Science & Tech,Applied Science & Technology,EngineeringArabic,Arabic,Arabic,LanguageArchitecture,Architecture,Architecture,ProfessionalArt Practice,Art Practice,Art Practice,Arts & humanitiesAsian American Studies,Asian American Studies,Asian American Studies,Social scienceAsian Studies,Asian Studies,Asian Studies,Social scienceAstronomy,Astronomy,Astronomy,Natural scienceBengali,Bengali,Bengali,LanguageBerk-Columbia Exec MBA,Berk-Columbia Exec MBA,Berkeley-Columbia Executive MBA,ProfessionalBioengineering,Bioengineering,Bioengineering,EngineeringBiology,Biology,Biology,Natural scienceBiophysics,Biophysics,Biophysics,Natural scienceBuddhist Studies,Buddhist Studies,Buddhist Studies,Social scienceBusiness Admin-MBA,Business Admin-MBA,Business Administration (MBA),ProfessionalBusiness Admin-PhD,Business Admin-PhD,Business Administration (PhD),ProfessionalBusiness Admin-Undergrad,Business Administration,Business Administration,ProfessionalCatalan,Catalan,Catalan,LanguageCeltic Studies,Celtic Studies,Celtic Studies,LanguageChemical Engineering,Chemical Engineering,Chemical Engineering,EngineeringChemistry,Chemistry,Chemistry,Natural scienceChicano Studies,Chicano Studies,Chicano Studies,Social scienceChinese,Chinese,Chinese,LanguageCity & Regional Planning,City & Regional Planning,City & Regional Planning,ProfessionalCivil & Environmental Eng,Civil & Environmental Eng,Civil & Environmental Engineering,EngineeringClassics,Classics,Classics,Arts & humanitiesCognitive Science,Cognitive Science,Cognitive Science,Natural scienceCollege Writing Programs,College Writing Programs,College Writing Programs,Arts & humanitiesComparative Biochemistry,Comparative Biochemistry,Comparative Biochemistry,Natural scienceComparative Literature,Comparative Literature,Comparative Literature,Arts & humanitiesComputational Biology,Computational Biology,Computational Biology,Natural scienceComputer Science,Computer Science,Computer Science,Mathematical scienceCreative Writing,Creative Writing,Creative Writing,Arts & humanitiesCritical Theory,Critical Theory,Critical Theory,Arts & humanitiesCuneiform,Cuneiform,Cuneiform,LanguageDemography,Demography,Demography,Social scienceDesign Innovation,Design Innovation,Design Innovation,OtherDevelopment Engineering,Development Engineering,Development Engineering,EngineeringDevelopment Practice,Development Practice,Development Practice,Social scienceDevelopment Studies,Development Studies,Development Studies,Social scienceDutch,Dutch,Dutch,LanguageEarth & Planetary Science,Earth & Planetary Science,Earth & Planetary Science,Natural scienceEast Asian Languages,East Asian Languages,East Asian Languages,LanguageEast European Studies,East European Studies,East European Studies,Social scienceEconomics,Economics,Economics,Social scienceEducation,Education,Education,ProfessionalEgyptian,Egyptian,Egyptian,LanguageElectrical Engineering,Electrical Engineering,Electrical Engineering,EngineeringEnergy and Resources,Energy & Resources,Energy & Resources,ProfessionalEngineering,Engineering,Engineering,EngineeringEnglish,English,English,Arts & humanities"Env Sci, Policy, & Mgmt",ESPM,"Environmental Science, Policy & Management",ProfessionalEnviron Econ & Policy,Environmental Econ & Policy,Environmental Economics & Policy,Social scienceEnvironmental Design,Environmental Design,Environmental Design,ProfessionalEnvironmental Sciences,Environmental Sciences,Environmental Sciences,Natural scienceEthnic Studies,Ethnic Studies,Ethnic Studies,Social scienceEthnic Studies Grad Group,Ethnic Studies Grad Group,Ethnic Studies Grad Group,Social scienceEurasian Studies,Eurasian Studies,Eurasian Studies,Social scienceEvening & Weekend MBA,Evening & Weekend MBA,Evening & Weekend MBA,ProfessionalFilipino,Filipino,Filipino,LanguageFilm,Film,Film,Arts & humanitiesFinancial Engineering,Financial Engineering,Financial Engineering,EngineeringFolklore,Folklore,Folklore,Social scienceFrench,French,French,LanguageGender & Womens Studies,Gender & Women's Studies,Gender & Women's Studies,Social scienceGeography,Geography,Geography,Natural scienceGerman,German,German,LanguageGlobal Metro Studies,Global Metro Studies,Global Metro Studies,Social scienceGlobal Poverty & Practice,Global Poverty & Practice,Global Poverty & Practice,Social scienceGrad Professional Dev Pgm,Grad Professional Dev Pgm,Graduate Professional Development Program,ProfessionalGreek,Greek,Greek,LanguageHealth & Medical Sciences,Health & Medical Sciences,Health & Medical Sciences,ProfessionalHebrew,Hebrew,Hebrew,LanguageHindi-Urdu,Hindi/Urdu,Hindi/Urdu,LanguageHistory,History,History,Social scienceHistory of Art,History of Art,History of Art,Social scienceIndigenous Lang of Amer,Indigenous Lang of Amer,Indigenous Languages of America,LanguageIndustrial Eng & Ops Rsch,Industrial Eng & Ops Rsch,Industrial Engineering & Operations Research,EngineeringInfo & Data Science,Info & Data Science,Info & Data Science,ProfessionalInfo Mgmt & Systems,Info Mgmt & Systems,Information Management & Systems,ProfessionalIntegrative Biology,Integrative Biology,Integrative Biology,Natural scienceInterdisciplinary Studies,Interdisciplinary Studies,Interdisciplinary Studies,OtherInternational & Area Stds,International & Area Studies,International & Area Studies,Social scienceIranian,Iranian,Iranian,LanguageItalian Studies,Italian Studies,Italian Studies,LanguageJapanese,Japanese,Japanese,LanguageJewish Studies,Jewish Studies,Jewish Studies,Social scienceJournalism,Journalism,Journalism,ProfessionalKhmer,Khmer,Khmer,LanguageKorean,Korean,Korean,LanguageLandscape Arch & Env Plan,Landscape Arch & Env Plan,Landscape Architecture & Environmental Planning,ProfessionalLanguage Proficiency Pgm,Language Proficiency Pgm,Language Proficiency Program,OtherLatin,Latin,Latin,LanguageLatin American Studies,Latin American Studies,Latin American Studies,Social scienceLaw,Law,Law,ProfessionalLegal Studies,Legal Studies,Legal Studies,Social scienceLetters & Science,Letters & Science,Letters & Science,OtherLGBT Studies,LGBT Studies,LGBT Studies,Social scienceLinguistics,Linguistics,Linguistics,Social scienceMalay/Indonesian,Malay/Indonesian,Malay/Indonesian,LanguageMaterials Science & Eng,Materials Science & Eng,Materials Science & Engineering,EngineeringMathematics,Mathematics,Mathematics,Mathematical scienceMechanical Engineering,Mechanical Engineering,Mechanical Engineering,EngineeringMedia Studies,Media Studies,Media Studies,Arts & humanitiesMedieval Studies,Medieval Studies,Medieval Studies,Social scienceMiddle Eastern Studies,Middle Eastern Studies,Middle Eastern Studies,Social scienceMilitary Affairs,Military Affairs,Military Affairs,OtherMilitary Science,Military Science,Military Science,OtherMolecular & Cell Biology,Molecular & Cell Biology,Molecular & Cell Biology,Natural scienceMusic,Music,Music,Arts & humanitiesNanoscale Science & Eng,Nanoscale Science & Eng,Nanoscale Science & Engineering,EngineeringNative American Studies,Native American Studies,Native American Studies,Social scienceNatural Resources,Natural Resources,Natural Resources,OtherNaval Science,Naval Science,Naval Science,OtherNear Eastern Studies,Near Eastern Studies,Near Eastern Studies,Social scienceNeuroscience,Neuroscience,Neuroscience,Natural scienceNew Media,New Media,New Media,OtherNuclear Engineering,Nuclear Engineering,Nuclear Engineering,EngineeringNutritional Science & Tox,Nutritional Science,Nutritional Science,Natural scienceOptometry,Optometry,Optometry,ProfessionalPeace & Conflict Studies,Peace & Conflict Studies,Peace & Conflict Studies,Social sciencePersian,Persian,Persian,LanguagePhilosophy,Philosophy,Philosophy,Arts & humanitiesPhysical Education,Physical Education,Physical Education,OtherPhysics,Physics,Physics,Natural sciencePlant Biology,Plant Biology,Plant Biology,Natural sciencePolitical Economy,Political Economy,Political Economy,Social sciencePolitical Science,Political Science,Political Science,Social sciencePortuguese,Portuguese,Portuguese,LanguagePsychology,Psychology,Psychology,Social sciencePublic Health,Public Health,Public Health,ProfessionalPublic Policy,Public Policy,Public Policy,ProfessionalPunjabi,Punjabi,Punjabi,LanguageReligious Studies,Religious Studies,Religious Studies,Social scienceRhetoric,Rhetoric,Rhetoric,Arts & humanitiesSanskrit,Sanskrit,Sanskrit,LanguageScandinavian,Scandinavian,Scandinavian,LanguageScience & Math Education,Science & Math Education,Science & Math Education,ProfessionalScience & Tech Studies,Science & Tech Studies,Science & Tech Studies,OtherSemitics,Semitics,Semitics,Social scienceSlavic Languages & Lit,Slavic Languages & Lit,Slavic Languages & Literature,LanguageSocial Welfare,Social Welfare,Social Welfare,Social scienceSociology,Sociology,Sociology,Social scienceSouth & SE Asian Studies,South & SE Asian Studies,South & Southeast Asian Studies,Social scienceSouth Asian,South Asian,South Asian,LanguageSoutheast Asian,Southeast Asian,Southeast Asian,LanguageSpanish,Spanish,Spanish,LanguageStatistics,Statistics,Statistics,Mathematical scienceTagalog,Tagalog,Tagalog,LanguageTamil,Tamil,Tamil,LanguageTelugu,Telugu,Telugu,LanguageThai,Thai,Thai,LanguageTheater Dance & Perf Stds,"Theater, Dance & Perf Stds","Theater, Dance & Performance Studies",Arts & humanitiesTibetan,Tibetan,Tibetan,LanguageTurkish,Turkish,Turkish,LanguageUGIS-UG Interdisc Studies,UGIS-UG Interdisc Studies,Undergraduate Interdisciplinary Studies,OtherVietnamese,Vietnamese,Vietnamese,LanguageVision Science,Vision Science,Vision Science,ProfessionalVisual Studies,Visual Studies,Visual Studies,Arts & humanitiesYiddish,Yiddish,Yiddish,Language
