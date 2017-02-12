@@ -14,16 +14,17 @@
   <div class="top">
     <h1>Guess the UC Berkeley department with the lowest grades</h1>
     <p class="byline">By <b><a href="http://www.dailycal.org/author/schinoy/">SAHIL CHINOY</a></b> and <b><a href="http://www.dailycal.org/author/rkwan/">RONALD KWAN</a></b></p>
-    <p class="date">DECEMBER 11, 2015</p>
+    <p>DECEMBER 11, 2015 <br>
+    Updated: FEBRUARY 12, 2017</p>
 
     <div class="lead-text">
       <p>At UC Berkeley, hypotheses about the departments with the lowest grades abound.</p>
 
-      <p>To see if those perceptions reflect reality, The Daily Californian analyzed more than 1.5 million grades given over the last eight years and reported through <a href="http://calanswers.berkeley.edu/" target="_blank">Cal Answers</a>, a repository for campus data. We limited our analysis to undergraduate courses, considering only the departments that have issued more than 1,000 letter grades. These figures reflect grades awarded in classes offered by a particular department, not the GPA of students in a particular major.</p>
+      <p>To see if those perceptions reflect reality, The Daily Californian analyzed more than 1.5 million grades given over the last nine years and reported through <a href="http://calanswers.berkeley.edu/" target="_blank">Cal Answers</a>, a repository for campus data. We limited our analysis to undergraduate courses, considering only the departments that have issued more than 1,000 letter grades. These figures reflect grades awarded in classes offered by a particular department, not the GPA of students in a particular major.</p>
 
       <p>Grading policies vary between departments and grade averages don't necessarily measure the difficulty of a department's courses. Still, we found a significant gap — more than one letter grade — between the departments with the highest and lowest averages.</p>
 
-      <p>Before seeing the results, we'd like you to guess which department has had the lowest grade average. You'll be able to compare your guess to others' and to the true ranking.</p>
+      <p>Before seeing the results, we'd like you to guess which department has had the lowest grade average.</p>
     </div>
 
     <div class="form">
@@ -92,13 +93,13 @@
 </script>
 
 <script type="text/template" id="close-template">
-  <p>Close! <%= full_name %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
+  <p>Close! <%= full_name %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 99 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
   <p>The average across all classes was 3.29, and the department with the lowest average was Biology, with an average of 2.80.</p>
   <h3 id="scrollToDotChart"><a>Explore grade distributions by department &nbsp; <i class="fa fa-angle-double-down"></i></a></h3>
 </script>
 
 <script type="text/template" id="far-template">
-  <p>Nope! <%= full_name %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 98 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
+  <p>Nope! <%= full_name %> is actually ranked <b><% print(ordinal_suffix_of(rank)) %></b> of 99 departments, with an average of <b><% print(avg.toFixed(2)) %></b>.</p>
   <p>The average across all classes was 3.29, and the department with the lowest average was Biology, with an average of 2.80.</p>
   <h3 id="scrollToDotChart"><a>Explore grade distributions by department &nbsp; <i class="fa fa-angle-double-down"></i></a></h3>
 </script>

@@ -1,4 +1,5 @@
 import glob
+from django.conf import settings
 from django.core.management.base import BaseCommand
 from core.models import *
 from import_csv import create_objects
@@ -6,22 +7,18 @@ from import_csv import create_objects
 
 class Command(BaseCommand):
     help = """
-    Imports grade distribution data from a directory of Cal Answers CSV files.
+    Imports grade distribution data from the DATA_DIR.
     File names should be of the form '[season][year].csv', where [season] is
     one of 'fa', 'sp', 'su' (for Fall, Spring, and Summer).
     """
 
-    def add_arguments(self, parser):
-        parser.add_argument('dir', help="path to the dir containing csv \
-                                        files to read")
-
     def handle(self, *args, **options):
-        print('Importing data from {}'.format(options['dir']))
+        print('Importing data from {}'.format(settings.DATA_DIR))
         prefixes = ['sp', 'su', 'fa']
         paths = [
-            glob.glob(options['dir'] + '/sp*.csv'),
-            glob.glob(options['dir'] + '/su*.csv'),
-            glob.glob(options['dir'] + '/fa*.csv'),
+            glob.glob(settings.DATA_DIR + '/sp*.csv'),
+            glob.glob(settings.DATA_DIR + '/su*.csv'),
+            glob.glob(settings.DATA_DIR + '/fa*.csv'),
         ]
         processed_paths = 0
         total_paths = sum([len(path_list) for path_list in paths])

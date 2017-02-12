@@ -4,7 +4,6 @@ from django.core.exceptions import ImproperlyConfigured
 from unipath import Path
 
 # Number of digits to use in rounding mean and standard deviation
-
 PRECISION = 3
 
 def env_var(var_name):
@@ -36,6 +35,7 @@ SERVER_EMAIL = ''
 # Set up directory structure and static files
 
 BASE_DIR = Path(__file__).ancestor(3)
+DATA_DIR = BASE_DIR.ancestor(1).child("data")
 MEDIA_ROOT = BASE_DIR.child("media")
 STATIC_ROOT = BASE_DIR.child("staticfiles")
 STATIC_URL = '/static/'
