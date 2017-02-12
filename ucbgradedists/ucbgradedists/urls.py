@@ -6,5 +6,5 @@ from graphic.views import GraphicView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', GraphicView.as_view()),
+    url(r'^grades/$', GraphicView.as_view()),
 ]

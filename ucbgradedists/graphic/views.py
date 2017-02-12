@@ -7,7 +7,7 @@ from core.models import DivisionSet, SubjectStats
 
 
 class GraphicView(BuildableTemplateView):
-    build_path = 'index.html'
+    build_path = 'grades/index.html'
     template_name = 'graphic.html'
 
     def get_context_data(self, **kwargs):

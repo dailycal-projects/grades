@@ -39,7 +39,7 @@ Run a series of management commands to import data and compute statistics. These
 python manage.py setup
 ```
 This will call:
-* `python manage.py import_dir [dir]` to import data from all CSV files in a directory.
+* `python manage.py import_all` to import data from all CSV files in a directory.
 * `python manage.py import_disciplines` to import a mapping of subjects to academic disciplines.
 * `python manage.py compute_stats` to compute statistics.
 

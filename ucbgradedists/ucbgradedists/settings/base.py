@@ -38,7 +38,7 @@ BASE_DIR = Path(__file__).ancestor(3)
 DATA_DIR = BASE_DIR.ancestor(1).child("data")
 MEDIA_ROOT = BASE_DIR.child("media")
 STATIC_ROOT = BASE_DIR.child("staticfiles")
-STATIC_URL = '/static/'
+STATIC_URL = '/grades/static/'
 STATICFILES_DIRS = (
     BASE_DIR.child("static"),
 )
